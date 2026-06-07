@@ -454,6 +454,41 @@ footer .copy {
   .section { padding: 4rem 1.5rem; }
 }
 
+
+/* ── LOGO ── */
+.nav-logo-img {
+  height: 38px;
+  width: auto;
+  vertical-align: middle;
+  margin-right: 10px;
+  filter: drop-shadow(0 0 6px rgba(30,80,255,0.45));
+  transition: filter 0.3s;
+}
+.nav-logo:hover .nav-logo-img {
+  filter: drop-shadow(0 0 14px rgba(30,80,255,0.7));
+}
+.hero-logo {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+  animation: logo-pulse 3s ease infinite, hero-enter 0.8s cubic-bezier(0.16,1,0.3,1) both;
+}
+@keyframes logo-pulse {
+  0%,100% { filter: drop-shadow(0 0 12px rgba(30,80,255,0.35)); }
+  50%      { filter: drop-shadow(0 0 28px rgba(30,80,255,0.6)); }
+}
+.footer-logo-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 0.8rem;
+  opacity: 0.8;
+  filter: drop-shadow(0 0 8px rgba(30,80,255,0.3));
+}
+
 </style>
   <style>
     /* ── HERO ── */
@@ -773,7 +808,7 @@ body.page-out { animation: page-fade-out 0.35s ease forwards !important; }
 <body>
 
 <nav>
-  <a class="nav-logo" href="index.html"><span>A</span>UTTP</a>
+  <a class="nav-logo" href="index.html"><img src="auttp.png" alt="AUTTP Logo" class="nav-logo-img"><span>A</span>UTTP</a>
   <ul class="nav-links" id="navLinks">
     <li><a href="index.html" class="active">Home</a></li>
     <li><a href="about.html">The Threat</a></li>
@@ -786,6 +821,7 @@ body.page-out { animation: page-fade-out 0.35s ease forwards !important; }
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg-word">UTTP</div>
+  <img src="auttp.png" alt="AUTTP Logo" class="hero-logo">
   <div class="hero-badge" data-typewriter="⚠ UTTP IS STILL ACTIVE — WE FIGHT BACK"></div>
   <h1 class="hero-title">
     <span class="l1">TAKE DOWN</span>
@@ -869,7 +905,7 @@ body.page-out { animation: page-fade-out 0.35s ease forwards !important; }
 </div>
 
 <footer>
-  <div class="footer-logo">AUTTP</div>
+  <img src="auttp.png" alt="AUTTP" class="footer-logo-img"><div class="footer-logo">AUTTP</div>
   <ul class="footer-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">The Threat</a></li>
