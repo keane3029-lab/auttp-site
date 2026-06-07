@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Threat — AUTTP</title>
+  <meta name="description" content="Learn exactly who UTTP is and how they use mass reporting to silence content creators.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── TACTIC CARDS ── */
+    .tactic-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .tactic-card {
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--red);
+      background: var(--bg2);
+      padding: 2rem;
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .tactic-card:hover { border-color: #333; transform: translateY(-3px); box-shadow: 0 10px 40px rgba(0,0,0,0.4); }
+
+    .tc-num {
+      position: absolute;
+      top: 1.2rem; right: 1.5rem;
+      font-family: 'Bebas Neue', cursive;
+      font-size: 3.5rem;
+      color: rgba(230,0,0,0.08);
+      line-height: 1;
+    }
+
+    .tc-label {
+      font-size: 0.65rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.5rem;
+    }
+
+    .tc-title {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 1.7rem;
+      letter-spacing: 1px;
+      margin-bottom: 0.8rem;
+    }
+
+    .tc-body {
+      font-size: 0.82rem;
+      line-height: 1.8;
+      color: rgba(240,236,224,0.6);
+    }
+
+    /* ── WHY SECTION ── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+      margin-top: 1rem;
+    }
+
+    .why-text {
+      font-size: 0.88rem;
+      line-height: 1.9;
+      color: rgba(240,236,224,0.68);
+    }
+
+    .why-text p + p { margin-top: 1.2rem; }
+
+    .why-text em { color: var(--red); font-style: normal; font-weight: bold; }
+
+    .why-callout {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--red);
+      padding: 2rem;
+    }
+
+    .wc-title {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+      color: var(--red);
+    }
+
+    .wc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .wc-list li {
+      font-size: 0.82rem;
+      color: rgba(240,236,224,0.65);
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+      line-height: 1.6;
+    }
+
+    .wc-list li::before {
+      content: '//';
+      color: var(--red);
+      flex-shrink: 0;
+      font-family: 'Share Tech Mono', monospace;
+    }
+
+    /* ── QUOTE BLOCK ── */
+    .quote-block {
+      border-left: 4px solid var(--red);
+      padding: 1.5rem 2rem;
+      background: var(--bg2);
+      margin: 2rem 0;
+    }
+
+    .quote-block blockquote {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 600;
+      letter-spacing: 1px;
+      line-height: 1.5;
+      color: var(--white);
+      font-style: normal;
+    }
+
+    .quote-block cite {
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-top: 0.8rem;
+    }
+
+    /* ── CTA ROW ── */
+    .cta-row {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 3rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .cta-row p {
+      font-size: 0.8rem;
+      color: rgba(240,236,224,0.45);
+      letter-spacing: 1px;
+      line-height: 1.6;
+      flex: 1;
+      min-width: 200px;
+    }
+
+    @media (max-width: 768px) {
+      .tactic-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; gap: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html"><span>A</span>UTTP</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">The Threat</a></li>
+    <li><a href="mission.html">Our Mission</a></li>
+    <li><a href="petition.html" class="nav-sign">Sign Now</a></li>
+  </ul>
+  <div class="nav-hamburger" id="burger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="ph-label">Threat Briefing</div>
+  <h1 class="ph-title">THE <em>THREAT</em></h1>
+  <p class="ph-sub">
+    UTTP is not a one-off troll. It is a coordinated hate group that has been 
+    systematically targeting content creators for years — and platforms are still 
+    failing to stop them.
+  </p>
+</div>
+
+<!-- WHAT IS UTTP -->
+<div class="section">
+  <div class="s-label">Who They Are</div>
+  <h2 class="s-title">WHAT IS <em>UTTP?</em></h2>
+
+  <div class="why-grid reveal">
+    <div class="why-text">
+      <p>
+        UTTP (also known as "Uptoppers") is an organized hate group that targets 
+        content creators — especially <em>animators, artists, and small YouTubers</em> — 
+        through coordinated mass false reporting, harassment raids, and channel 
+        takedown campaigns.
+      </p>
+      <p>
+        Their goal is simple: silence creators they disagree with by abusing 
+        automated platform systems. They exploit the fact that YouTube and other 
+        platforms rely heavily on automated strike systems that can't distinguish 
+        between <em>legitimate reports and coordinated spam</em>.
+      </p>
+      <p>
+        This isn't a new problem. UTTP has been operating for years, adapting their 
+        methods, recruiting new members, and continuing their campaigns even as 
+        individual accounts get banned. They always come back. That's why we need 
+        platforms to address them at the root — not just ban individual accounts 
+        on a case-by-case basis.
+      </p>
+    </div>
+    <div>
+      <div class="why-callout">
+        <div class="wc-title">THREAT INDICATORS</div>
+        <ul class="wc-list">
+          <li>Coordinated reporting from multiple accounts simultaneously</li>
+          <li>Targeting of small creators with fewer than 10K subscribers</li>
+          <li>Focus on animation, art, and fandom communities</li>
+          <li>Use of alternate accounts after main accounts are banned</li>
+          <li>Harassment campaigns in comments and community posts</li>
+          <li>Organized via private Discord servers and group chats</li>
+          <li>Patterns of activity across multiple platforms at once</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="quote-block reveal">
+    <blockquote>
+      "Spam bots, like the infamous UTTP, can ruin our online experience. They flood 
+      social media platforms with coordinated attacks, making it seem impossible to 
+      have genuine interactions without their interference."
+    </blockquote>
+    <cite>— From the official AUTTP Change.org petition</cite>
+  </div>
+</div>
+
+<hr>
+
+<!-- TACTIC CARDS -->
+<div class="section reveal">
+  <div class="s-label">How They Operate</div>
+  <h2 class="s-title">THEIR <em>TACTICS</em></h2>
+
+  <div class="tactic-grid">
+    <div class="tactic-card">
+      <div class="tc-num">01</div>
+      <div class="tc-label">Primary Tactic</div>
+      <div class="tc-title">MASS FALSE REPORTING</div>
+      <p class="tc-body">
+        Groups of UTTP members file the same copyright or Community Guidelines report 
+        simultaneously on a target channel. YouTube's automated systems interpret 
+        volume as legitimacy — flagging channels even when the reports are completely 
+        fabricated, resulting in unearned strikes, removals, or terminations.
+      </p>
+    </div>
+    <div class="tactic-card">
+      <div class="tc-num">02</div>
+      <div class="tc-label">Secondary Tactic</div>
+      <div class="tc-title">HARASSMENT RAIDS</div>
+      <p class="tc-body">
+        Organized raids on target channels involving coordinated toxic comments, 
+        hate speech, impersonation attempts, and mass dislike campaigns. The goal 
+        is to intimidate creators into deleting content, going private, or quitting 
+        entirely — without needing the formal report system at all.
+      </p>
+    </div>
+    <div class="tactic-card">
+      <div class="tc-num">03</div>
+      <div class="tc-label">Infiltration Tactic</div>
+      <div class="tc-title">COMMUNITY INFILTRATION</div>
+      <p class="tc-body">
+        UTTP members create accounts that blend into creative communities to gather 
+        intel, manufacture drama, and spread false narratives about target creators 
+        before the reporting campaign begins. By the time the raids start, distrust 
+        and confusion have already been seeded in the community.
+      </p>
+    </div>
+    <div class="tactic-card">
+      <div class="tc-num">04</div>
+      <div class="tc-label">System Exploit</div>
+      <div class="tc-title">PLATFORM LOOPHOLE ABUSE</div>
+      <p class="tc-body">
+        UTTP specifically exploit the gap between YouTube's automated enforcement 
+        and human review. They know that automated strikes can remove content or 
+        restrict channels within hours, while the appeals process takes days or 
+        weeks — meaning creators lose income and visibility even when they 
+        ultimately win the appeal.
+      </p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-row reveal">
+    <p>
+      Now that you know what UTTP does — learn how AUTTP plans to fight back 
+      and what you can do to help.
+    </p>
+    <a href="mission.html" class="btn-red">OUR MISSION →</a>
+    <a href="petition.html" class="btn-ghost">SIGN NOW →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">AUTTP</div>
+  <ul class="footer-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">The Threat</a></li>
+    <li><a href="mission.html">Mission</a></li>
+    <li><a href="petition.html">Sign</a></li>
+  </ul>
+  <p class="copy">Anti-UTTP Coalition — Defending Creators Everywhere</p>
+</footer>
+
+<script>
+  document.getElementById('burger').addEventListener('click', () => {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+  const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); }), { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

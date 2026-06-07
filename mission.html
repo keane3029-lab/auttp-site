@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Mission — AUTTP</title>
+  <meta name="description" content="AUTTP's three-point mission: ban UTTP, protect creators, and raise awareness against mass reporting harassment.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── MISSION CARDS ── */
+    .mission-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .mission-card {
+      border: 1px solid var(--border);
+      background: var(--bg2);
+      padding: 3rem 2rem 2.5rem;
+      position: relative;
+      text-align: center;
+      transition: all 0.3s;
+      overflow: hidden;
+    }
+
+    .mission-card:hover { border-color: #2e2e2e; transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+
+    .mc-bg-num {
+      position: absolute;
+      bottom: -1rem; right: 1rem;
+      font-family: 'Bebas Neue', cursive;
+      font-size: 7rem;
+      color: rgba(230,0,0,0.055);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .mc-icon {
+      font-size: 2.8rem;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .mc-label {
+      font-size: 0.62rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.5rem;
+    }
+
+    .mc-title {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 2.2rem;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+      line-height: 1;
+    }
+
+    .mc-body {
+      font-size: 0.82rem;
+      line-height: 1.8;
+      color: rgba(240,236,224,0.58);
+    }
+
+    /* ── HOW TO HELP ── */
+    .help-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .help-item {
+      border: 1px solid var(--border);
+      background: var(--bg2);
+      padding: 2rem;
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      transition: border-color 0.2s;
+    }
+
+    .help-item:hover { border-color: #2e2e2e; }
+
+    .hi-icon {
+      font-size: 1.8rem;
+      flex-shrink: 0;
+      width: 3rem;
+      text-align: center;
+    }
+
+    .hi-title {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    .hi-body {
+      font-size: 0.8rem;
+      line-height: 1.75;
+      color: rgba(240,236,224,0.55);
+    }
+
+    /* ── MANIFESTO ── */
+    .manifesto {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--red);
+      padding: 3.5rem;
+      margin-top: 2rem;
+    }
+
+    .manifesto-title {
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      letter-spacing: 3px;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .manifesto-body {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 0.9rem;
+      line-height: 2;
+      color: rgba(240,236,224,0.65);
+      text-align: center;
+    }
+
+    .manifesto-body em { color: var(--red); font-style: normal; }
+
+    .manifesto-sig {
+      text-align: center;
+      margin-top: 2rem;
+      font-family: 'Bebas Neue', cursive;
+      font-size: 1.2rem;
+      letter-spacing: 4px;
+      color: var(--red);
+    }
+
+    /* ── CTA STRIP ── */
+    .cta-strip {
+      background: var(--red);
+      padding: 4rem 2.5rem;
+      text-align: center;
+    }
+
+    .cta-strip h2 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(2rem, 5vw, 4rem);
+      letter-spacing: 3px;
+      color: var(--bg);
+      margin-bottom: 1rem;
+      line-height: 1;
+    }
+
+    .cta-strip p {
+      font-size: 0.85rem;
+      color: rgba(10,10,10,0.6);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    .btn-dark {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 1.4rem;
+      letter-spacing: 5px;
+      color: var(--white);
+      background: var(--bg);
+      border: none;
+      padding: 1rem 3rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s;
+    }
+
+    .btn-dark:hover { background: #1a1a1a; transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+
+    @media (max-width: 768px) {
+      .mission-cards { grid-template-columns: 1fr; }
+      .help-grid { grid-template-columns: 1fr; }
+      .manifesto { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html"><span>A</span>UTTP</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">The Threat</a></li>
+    <li><a href="mission.html" class="active">Our Mission</a></li>
+    <li><a href="petition.html" class="nav-sign">Sign Now</a></li>
+  </ul>
+  <div class="nav-hamburger" id="burger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="ph-label">Our Objective</div>
+  <h1 class="ph-title">OUR <em>MISSION</em></h1>
+  <p class="ph-sub">
+    AUTTP — the Anti-UTTP Coalition — exists with one purpose: to end UTTP's 
+    harassment campaigns and make the internet safer for content creators. 
+    We pursue this through three concrete objectives.
+  </p>
+</div>
+
+<!-- MISSION CARDS -->
+<div class="section">
+  <div class="s-label">Three Objectives</div>
+  <h2 class="s-title">WHAT WE <em>FIGHT FOR</em></h2>
+
+  <div class="mission-cards reveal">
+    <div class="mission-card">
+      <div class="mc-bg-num">01</div>
+      <span class="mc-icon">🚫</span>
+      <div class="mc-label">Objective 01</div>
+      <div class="mc-title">BAN UTTP</div>
+      <p class="mc-body">
+        Demand that YouTube, TikTok, and all major platforms permanently 
+        ban UTTP-affiliated accounts and implement coordinated harassment 
+        detection so organized reporting abuse results in real consequences — 
+        not just individual account strikes.
+      </p>
+    </div>
+    <div class="mission-card">
+      <div class="mc-bg-num">02</div>
+      <span class="mc-icon">🛡️</span>
+      <div class="mc-label">Objective 02</div>
+      <div class="mc-title">PROTECT CREATORS</div>
+      <p class="mc-body">
+        Fight for faster appeal systems, human review for coordinated 
+        harassment cases, and stronger protections for small creators 
+        who currently have no way to defend themselves against organized 
+        mass-reporting campaigns.
+      </p>
+    </div>
+    <div class="mission-card">
+      <div class="mc-bg-num">03</div>
+      <span class="mc-icon">📢</span>
+      <div class="mc-label">Objective 03</div>
+      <div class="mc-title">RAISE AWARENESS</div>
+      <p class="mc-body">
+        Expose UTTP's tactics to the wider creator community so every 
+        creator knows how to document harassment, appeal false strikes, 
+        and report coordinated abuse to platforms in a way that actually 
+        gets results.
+      </p>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- HOW YOU CAN HELP -->
+<div class="section reveal">
+  <div class="s-label">Take Action</div>
+  <h2 class="s-title">HOW TO <em>HELP</em></h2>
+
+  <div class="help-grid">
+    <div class="help-item">
+      <div class="hi-icon">✍️</div>
+      <div>
+        <div class="hi-title">SIGN THE PETITION</div>
+        <p class="hi-body">Add your name to the official Change.org petition demanding platforms take action. Every signature puts pressure on YouTube and other platforms to address UTTP directly.</p>
+      </div>
+    </div>
+    <div class="help-item">
+      <div class="hi-icon">🔗</div>
+      <div>
+        <div class="hi-title">SHARE THE PETITION</div>
+        <p class="hi-body">Share the petition link across social media, Discord servers, creator communities, and group chats. The more visibility this gets, the more pressure it creates.</p>
+      </div>
+    </div>
+    <div class="help-item">
+      <div class="hi-icon">📋</div>
+      <div>
+        <div class="hi-title">DOCUMENT ATTACKS</div>
+        <p class="hi-body">If you're targeted by UTTP, screenshot everything — comments, report notifications, timestamps. Documented patterns are much harder for platforms to ignore than individual appeals.</p>
+      </div>
+    </div>
+    <div class="help-item">
+      <div class="hi-icon">🚨</div>
+      <div>
+        <div class="hi-title">REPORT TO PLATFORMS</div>
+        <p class="hi-body">File reports with YouTube directly when you see coordinated UTTP activity. Include as much documented evidence as possible and cite the pattern of coordinated harassment, not just individual comments.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- MANIFESTO -->
+<div class="section-sm reveal">
+  <div class="manifesto">
+    <div class="manifesto-title">THE <em>AUTTP</em> MANIFESTO</div>
+    <p class="manifesto-body">
+      We believe that every creator deserves a fair and safe space to make content 
+      without fear of coordinated harassment. We believe that <em>reporting systems 
+      should not be weapons</em>. We believe that platforms have a responsibility to 
+      protect their communities — not just automate enforcement with no human 
+      oversight. We will not stop until UTTP is gone for good and creators can 
+      build without looking over their shoulders. <em>This is our fight. Sign your name.</em>
+    </p>
+    <div class="manifesto-sig">— THE AUTTP COALITION</div>
+  </div>
+</div>
+
+<!-- CTA STRIP -->
+<div class="cta-strip">
+  <h2>READY TO FIGHT BACK?</h2>
+  <p>Add your name to the official petition — it only takes 30 seconds</p>
+  <a href="petition.html" class="btn-dark">SIGN THE PETITION NOW →</a>
+</div>
+
+<footer>
+  <div class="footer-logo">AUTTP</div>
+  <ul class="footer-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">The Threat</a></li>
+    <li><a href="mission.html">Mission</a></li>
+    <li><a href="petition.html">Sign</a></li>
+  </ul>
+  <p class="copy">Anti-UTTP Coalition — Defending Creators Everywhere</p>
+</footer>
+
+<script>
+  document.getElementById('burger').addEventListener('click', () => {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+  const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); }), { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
